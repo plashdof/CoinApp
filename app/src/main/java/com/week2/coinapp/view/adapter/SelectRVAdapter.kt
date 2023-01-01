@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.week2.coinapp.App
 import com.week2.coinapp.R
 import com.week2.coinapp.dataModel.CurrentPriceResult
 import com.week2.coinapp.databinding.IntroCoinItemBinding
@@ -23,6 +24,7 @@ class SelectRVAdapter(val context : Context, val coinPriceList : List<CurrentPri
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+
         val viewBinding = IntroCoinItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(viewBinding)
     }
