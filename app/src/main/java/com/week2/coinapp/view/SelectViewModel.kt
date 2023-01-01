@@ -24,17 +24,24 @@ class SelectViewModel : ViewModel() {
     val currentPriceResult : LiveData<List<CurrentPriceResult>>
         get() = _currentPriceResult
 
-    fun getCurrentCointList() = viewModelScope.launch{
+    fun getCurrentCoinList() = viewModelScope.launch{
 
+        // API 통신으로, 결과값 result 에 저장
         val result = netWorkRepository.getCurrentCoinList()
 
+        // 가공된 데이터 넣을 ArrayList.
+        // CurrentPriceResult 데이터 형태로 저장할것임.
         currentPriceResultList = ArrayList()
+
 
         for(coin in result.data){
 
             // API 에서 받아오는 맨 마지막 데이터만 형태가 다름.
             // 예외처리로 처리
             try{
+
+                // API 통신으로 받아온 데이터를 가공.
+                // 가공된 데이터 currentPriceResultList 에 저장
                 val gson = Gson()
                 val gsonToJson = gson.toJson(result.data.get(coin.key))
                 val gsonFromJson = gson.fromJson(gsonToJson, CurrentPrice::class.java)
