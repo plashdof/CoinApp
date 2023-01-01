@@ -34,6 +34,7 @@ class IntroActivity : AppCompatActivity() {
             }else{
                 // 처음 접속하는 유저
                 // 인트로화면의 visibility 를 VISIBLE 로 설정
+                binding.animationView.visibility = View.INVISIBLE
                 binding.fragmentContainerView.visibility = View.VISIBLE
             }
         })
