@@ -38,12 +38,24 @@ class SelectActivity : AppCompatActivity() {
 
         })
 
-        // 처음 접속 유저인지를 판별하는 flag 데이터를 true 로 바꾸기
-        viewModel.setUpFirstFlag()
-
         binding.laterTextArea.setOnClickListener {
+
+            // 처음 접속 유저인지를 판별하는 flag 데이터를 true 로 바꾸기
+            viewModel.setUpFirstFlag()
+            viewModel.saveSelectedCoinList(selectRVAdapter.likedCoinList)
+
+            // 저장된 후 MainActivity로 넘어가야함!!
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+
+        viewModel.save.observe(this, Observer{
+            if(it.equals("done")){
+
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+
+            }
+        })
     }
 }

@@ -3,6 +3,7 @@ package com.week2.coinapp.view.Intro
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -29,6 +30,7 @@ class IntroActivity : AppCompatActivity() {
             if(it){
                 // 처음 접속하는 유저 아님
                 // 바로 MainActivity 로 이동
+                Log.d("aaaaa", "aaaaa")
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }else{
