@@ -114,7 +114,7 @@ class SelectViewModel : ViewModel() {
         }
 
         // 반복문 끝난뒤, 저장이 끝났음을 나타내는 변수 _saved 의 value 를 done 으로 변경
-        // background 스레드에서 하지 말고, D
+        // background 스레드에서 하지 말고, Main 스레드에서 실행
         withContext(Dispatchers.Main) {
             _saved.value = "done"
         }

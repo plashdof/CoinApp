@@ -8,8 +8,7 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.Observer
-import com.week2.coinapp.MainActivity
-import com.week2.coinapp.R
+import com.week2.coinapp.view.main.MainActivity
 import com.week2.coinapp.databinding.ActivityIntroBinding
 
 class IntroActivity : AppCompatActivity() {
