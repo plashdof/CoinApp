@@ -7,22 +7,21 @@ import timber.log.Timber
 class App : Application() {
 
 
-    // merge 테스트용
+    // ㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅ
     init{
         instance=this
     }
 
-    //ㄴㅇㄹㄴㅇㄹㄴㅇ
+    // ㅅㅅㅅㅅㅅㅅㅅㅅㅅ
     companion object{
-        //ㄴ ㅇㄹㄴㅇㄹㄴㅇㄹ
         private var instance : App? = null
 
         fun context() : Context {
             return instance!!.applicationContext
         }
     }
-    // ㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹ
-    ////////
+    //
+    //////// ㅅㅅㅅㅅㅅㅅ
     override fun onCreate() {
         super.onCreate()
         Timber.plant(Timber.DebugTree())
